@@ -30,7 +30,8 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-i18n/dist/vue-i18n.js"></script>
     <!-- =======================================================
     * Template Name: Selecao - v4.0.1
     * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
@@ -40,6 +41,7 @@
 </head>
 
 <body>
+<div id="app" class="app">
 <!--<div class="top-head">-->
 <!--  <h1>Научно-исследовательский Центр им.Ф.И.Франкля Кыргызского национального университета им. Ж. Баласагына</h1>-->
 <!--</div>-->
@@ -82,10 +84,23 @@
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
-
+<!--        <select name="locale" id="locale" v-model="locale" @change="changeLocale()">-->
+<!--            <option selected value="ru">ru</option>-->
+<!--            <option value="en">en</option>-->
+<!--        </select>-->
     </div>
 </header><!-- End Header -->
+<!--<div >-->
+<!--    <header class="header">-->
+<!--        <h1 class="h1">{{$t("header.title")}}</h1>-->
 
+<!--    </header>-->
+<!--    <main class="main">-->
+<!--        <h3>{{$t("main.text1")}}</h3>-->
+<!--        <h4>{{$t("main.text2")}}</h4>-->
+<!--    </main>-->
+
+<!--</div>-->
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
     <div id="" class="container carousel-fade">
@@ -652,7 +667,7 @@
                 <p>Руководство</p>
             </div>
 
-            <div class="row">
+            <div class="row justify-content-center">
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up">
@@ -669,11 +684,11 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up">
                         <div class="member-img">
-                            <img src="assets/img/team/toktogonov_dek.jpg" class="img-fluid" alt="">
+                            <img src="assets/img/team/12.jpg" class="img-fluid" alt="">
 
                         </div>
                         <div class="member-info">
-                            <h4>Токтогонов Самат Алмазбекович</h4>
+                            <h4>Аркабаева Гульзыйнат Насырбековна</h4>
                             <span>Руководитель НИЦ им.Ф.И.Франкля</span>
                         </div>
                     </div>
@@ -681,24 +696,12 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up">
                         <div class="member-img">
-                            <img src="assets/img/team/toktogonov_dek.jpg" class="img-fluid" alt="">
+                            <img src="assets/img/team/1sveta.jpg" class="img-fluid" alt="">
 
                         </div>
                         <div class="member-info">
-                            <h4>Токтогонов Самат Алмазбекович</h4>
-                            <span>Руководитель НИЦ им.Ф.И.Франкля</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member" data-aos="fade-up">
-                        <div class="member-img">
-                            <img src="assets/img/team/toktogonov_dek.jpg" class="img-fluid" alt="">
-
-                        </div>
-                        <div class="member-info">
-                            <h4>Токтогонов Самат Алмазбекович</h4>
-                            <span>Руководитель НИЦ им.Ф.И.Франкля</span>
+                            <h4>Молдогазиева Светлана Бейшеевна</h4>
+                            <span>Директор по международным связям </span>
                         </div>
                     </div>
                 </div>
@@ -763,7 +766,7 @@
             src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A149bce11d0b32dd975ae28940ee2beb2b26595e58f69781b3ba4c93aaaf5eea9&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
 
 </main><!-- End #main -->
-
+</div>
 <!-- ======= Footer ======= -->
 <footer class="site-footer">
     <div class="container">
@@ -833,7 +836,49 @@
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="lang.json"></script>
+<script>
 
+    const messages = {
+        "ru": {
+            "header": {
+                "title": "title2"
+            },
+            "main": {
+                "text1": "text1",
+                "text2": "text2"
+            }
+        },
+        "en": {
+            "header": {
+                "title": "title1en"
+            },
+            "main": {
+                "text1": "text1en",
+                "text2": "text2en"
+            }
+        }
+    };
+    const i18n = new VueI18n({ messages: messages });
+    let app = new Vue({
+        el: "#app",
+        i18n: i18n,
+        data: {
+            locale: localStorage.getItem("locale") || "tw"
+        },
+        methods: {
+            changeLocale: function() {
+                this.$i18n.locale = this.locale;
+                console.log(this.$t("header.title"));
+                localStorage.setItem("locale", this.locale);
+            }
+        },
+        created() {
+            this.$i18n.locale = this.locale;
+        }
+    });
+
+</script>
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 

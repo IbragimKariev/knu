@@ -1,0 +1,20 @@
+{
+  "ru": {
+    "header": {
+      "title": "title2"
+    },
+    "main": {
+      "text1": "text1",
+      "text2": "text2"
+    }
+  },
+  "en": {
+    "header": {
+      "title": "title1en"
+    },
+    "main": {
+      "text1": "text1en",
+      "text2": "text2en"
+    }
+  }
+}
