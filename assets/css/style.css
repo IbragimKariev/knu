@@ -738,6 +738,7 @@ section {
 --------------------------------------------------------------*/
 .services .icon-box {
   padding: 30px;
+  display: block;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -770,12 +771,11 @@ section {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
-}
-
-.services .title a {
   color: #2a2c39;
   transition: ease-in-out 0.3s;
 }
+
+
 
 .services .title a:hover {
   color: #ef6603;
@@ -785,6 +785,7 @@ section {
   font-size: 14px;
   margin-left: 40px;
   line-height: 24px;
+  color: #2a2c39;
   margin-bottom: 0;
 }
 
@@ -1687,4 +1688,50 @@ span.date{
   z-index: 999;
   position: relative;
   margin: -86px -14px 0 0;
+}
+section.title-section{
+  background: url(../img/main/3837940.jpg);
+
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+h3.title-page{
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #2a2c39;
+  text-align: center;
+}
+.project{
+  border: 1px solid #d1d2d4;
+  padding: 10px 15px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: 0px 3px 8px rgb(69 101 173 / 10%);
+  box-shadow: 0px 3px 8px rgb(69 101 173 / 10%);
+  border-radius: 3px;  margin-bottom: 10px;
+}
+.project.bg-text{
+  border: none;
+  padding: 10px 15px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 3px;  margin-bottom: 10px;
+}
+.project p{
+margin-bottom: 6px;
+  font-weight: 600;
+}
+.project span{
+font-size: 14px;
 }
