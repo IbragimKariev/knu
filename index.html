@@ -57,30 +57,11 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="">Главное</a></li>
-                <li><a class="nav-link scrollto" href="">О нас</a></li>
-                <li><a class="nav-link scrollto" href="">Новости</a></li>
-                <li><a class="nav-link scrollto " href="">Документы</a></li>
-                <li><a class="nav-link scrollto" href="">Направления</a></li>
-                <li><a class="nav-link scrollto" href="">Руководство</a></li>
-                <!--          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>-->
-                <!--            <ul>-->
-                <!--              <li><a href="#">Drop Down 1</a></li>-->
-                <!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
-                <!--                <ul>-->
-                <!--                  <li><a href="#">Deep Drop Down 1</a></li>-->
-                <!--                  <li><a href="#">Deep Drop Down 2</a></li>-->
-                <!--                  <li><a href="#">Deep Drop Down 3</a></li>-->
-                <!--                  <li><a href="#">Deep Drop Down 4</a></li>-->
-                <!--                  <li><a href="#">Deep Drop Down 5</a></li>-->
-                <!--                </ul>-->
-                <!--              </li>-->
-                <!--              <li><a href="#">Drop Down 2</a></li>-->
-                <!--              <li><a href="#">Drop Down 3</a></li>-->
-                <!--              <li><a href="#">Drop Down 4</a></li>-->
-                <!--            </ul>-->
-                <!--          </li>-->
-                <li><a class="nav-link scrollto" href="#contact">Контакты</a></li>
+                <li><a class="nav-link scrollto active" href="index.html">Главное</a></li>
+                <li><a class="nav-link scrollto" href="about.html">О нас</a></li>
+                <li><a class="nav-link scrollto " href="documents.html">Документы</a></li>
+                <li><a class="nav-link scrollto" href="directions.html">Направления</a></li>
+                <li><a class="nav-link scrollto" href="contact.html">Контакты</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -795,7 +776,6 @@
                 <h6>Меню</h6>
                 <ul class="footer-links">
                     <li><a href="#">О нас</a></li>
-                    <li><a href="#">Новости</a></li>
                     <li><a href="#">Документы</a></li>
                     <li><a href="#">Направления</a></li>
                     <li><a href="#">Контакты</a></li>
@@ -836,49 +816,7 @@
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="lang.json"></script>
-<script>
 
-    const messages = {
-        "ru": {
-            "header": {
-                "title": "title2"
-            },
-            "main": {
-                "text1": "text1",
-                "text2": "text2"
-            }
-        },
-        "en": {
-            "header": {
-                "title": "title1en"
-            },
-            "main": {
-                "text1": "text1en",
-                "text2": "text2en"
-            }
-        }
-    };
-    const i18n = new VueI18n({ messages: messages });
-    let app = new Vue({
-        el: "#app",
-        i18n: i18n,
-        data: {
-            locale: localStorage.getItem("locale") || "tw"
-        },
-        methods: {
-            changeLocale: function() {
-                this.$i18n.locale = this.locale;
-                console.log(this.$t("header.title"));
-                localStorage.setItem("locale", this.locale);
-            }
-        },
-        created() {
-            this.$i18n.locale = this.locale;
-        }
-    });
-
-</script>
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 
